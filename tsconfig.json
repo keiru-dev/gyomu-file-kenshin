@@ -1,0 +1,20 @@
+{
+  "//": "ブラウザ側（成果物に入るコード）専用。types: [] で @types/node を意図的に締め出している。ここに Node のグローバルが見えると、C-1（実行時の外部依存ゼロ / 単一HTML）違反を型検査が見逃す。Node 側のコードは tsconfig.node.json を使う。",
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable", "WebWorker"],
+    "types": [],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": ["src"]
+}

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+fixtures/out/
+*.log
+.DS_Store
+
+# ローカル権限設定（Phase 移行の記録は docs/plan-phase1.md 側で追う）
+.claude/settings.local.json

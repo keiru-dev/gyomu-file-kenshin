@@ -1,0 +1,21 @@
+{
+  "//": "Node 上でだけ動くコード（フィクスチャ生成・ビルド設定・テスト）。成果物には入らない。ブラウザ側は tsconfig.json を使う。",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable", "WebWorker"],
+    "types": ["node"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "//include": "テストは src/ を import するため、ビルド時 define の宣言（globals.d.ts）だけは読み込む。src/ 本体はここに含めない（Node の型を見せないため）。",
+  "include": ["fixtures", "tests", "vite.config.ts", "src/globals.d.ts"]
+}
